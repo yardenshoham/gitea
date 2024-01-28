@@ -71,9 +71,10 @@
 					{{end}}
 				</div>
 			</div>
-
+			<span class="gt-invisible" id="empty-span"></span>
+			<div id="issue-comments-box" hx-get="{{printf "%s/issues/%d/comments" $.RepoLink .Issue.Index}}" hx-swap="innerHTML" hx-trigger="every 5s" hx-indicator="#empty-span">
 			{{template "repo/issue/view_content/comments" .}}
-
+		  </div>
 			{{if and .Issue.IsPull (not $.Repository.IsArchived)}}
 				{{template "repo/issue/view_content/pull".}}
 			{{end}}
