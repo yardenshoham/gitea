@@ -36,5 +36,5 @@
       "onAutoForward": "notify"
     }
   },
-  "postCreateCommand": "make deps"
+  "postCreateCommand": "make deps && make watch"
 }
